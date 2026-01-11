@@ -1,85 +1,163 @@
 # Arduna - Lifestyle Assistance & Concierge
 
-A premium, responsive static website for Arduna, a high-end lifestyle assistance and concierge company. Built with React, Tailwind CSS, and Framer Motion.
+![Arduna Banner](client/public/images/hero-banner.jpg)
 
-## 🌟 Features
+**Arduna** is a premium, high-performance static website designed for a luxury lifestyle assistance and concierge company. Built with modern web technologies, it delivers a seamless, responsive, and visually stunning experience tailored for high-net-worth individuals.
 
-*   **Premium Design**: "Modern Minimalist Luxury" aesthetic with a "Champagne & Slate" color palette.
-*   **Responsive Layout**: Fully optimized for mobile, tablet, and desktop devices.
-*   **Smooth Animations**: Subtle entrance animations and parallax effects using Framer Motion.
-*   **Service Showcase**: Elegant presentation of Travel, Events, and Lifestyle services.
-*   **Membership Tiers**: Clear pricing structure for Essential, Elite, and Bespoke memberships.
-*   **Direct Contact**: Streamlined contact section with WhatsApp integration.
+## 📖 Table of Contents
 
-## 🛠️ Tech Stack
+*   [Project Overview](#-project-overview)
+*   [Key Features](#-key-features)
+*   [Technology Stack](#-technology-stack)
+*   [Project Structure](#-project-structure)
+*   [Getting Started](#-getting-started)
+*   [Customization Guide](#-customization-guide)
+*   [Deployment](#-deployment)
+*   [License](#-license)
 
-*   **Framework**: React 18 + Vite
-*   **Styling**: Tailwind CSS
-*   **Animations**: Framer Motion
-*   **Routing**: Wouter (Lightweight router for static sites)
-*   **Icons**: Lucide React
+---
+
+## 🌟 Project Overview
+
+The design philosophy behind Arduna is **"Modern Minimalist Luxury"**. It employs a "Champagne & Slate" color palette to convey exclusivity, authority, and warmth. The layout breaks away from standard grids to offer an editorial, magazine-like feel, emphasizing high-quality imagery and elegant typography.
+
+### Design Pillars
+1.  **Essentialism**: Every element serves a purpose; clutter is eliminated to respect the user's time.
+2.  **Sophistication**: Reliance on *Playfair Display* (Serif) for headings and *Lato* (Sans-serif) for body text creates a trustworthy, classic hierarchy.
+3.  **Atmosphere**: Dark, rich tones mixed with warm gold accents create a digital environment that feels like a private lounge.
+
+---
+
+## ✨ Key Features
+
+*   **Cinematic Hero Section**: Features a parallax scrolling effect with a high-resolution luxury interior background.
+*   **Responsive Navigation**: A custom-built navbar that transitions from transparent to solid on scroll, with a full-screen mobile menu.
+*   **Interactive Service Cards**: Glassmorphism-styled cards for "Travel", "Events", and "Lifestyle" that reveal details on hover.
+*   **Tiered Membership Display**: A clear, comparative layout for "Essential", "Elite", and "Bespoke" membership levels.
+*   **Direct Contact Integration**: Optimized for conversion with direct WhatsApp, phone, and email links, replacing generic forms.
+*   **Performance Optimized**: Built on Vite for lightning-fast loading speeds and optimal SEO performance.
+
+---
+
+## 🛠 Technology Stack
+
+This project is a **static web application**, meaning it requires no backend server to run. It can be hosted anywhere that serves HTML/CSS/JS.
+
+| Category | Technology | Description |
+| :--- | :--- | :--- |
+| **Core** | [React 18](https://react.dev/) | Component-based UI library. |
+| **Build Tool** | [Vite](https://vitejs.dev/) | Next-generation frontend tooling. |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS framework. |
+| **Animation** | [Framer Motion](https://www.framer.com/motion/) | Production-ready animation library for React. |
+| **Routing** | [Wouter](https://github.com/molefrog/wouter) | Minimalist router for modern React apps. |
+| **Icons** | [Lucide React](https://lucide.dev/) | Beautiful, consistent icon set. |
+
+---
+
+## 📂 Project Structure
+
+```text
+arduna/
+├── client/
+│   ├── public/             # Static assets (images, favicon)
+│   │   └── images/         # Project-specific images
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   │   ├── ui/         # Base UI elements (buttons, inputs)
+│   │   │   ├── Hero.tsx    # Main landing section
+│   │   │   ├── Navbar.tsx  # Top navigation
+│   │   │   └── ...
+│   │   ├── pages/          # Page views (Home, NotFound)
+│   │   ├── lib/            # Utility functions
+│   │   ├── App.tsx         # Main application entry
+│   │   └── index.css       # Global styles & Tailwind config
+│   └── index.html          # HTML entry point
+├── dist/                   # Production build output (created after build)
+├── package.json            # Dependencies and scripts
+├── vite.config.ts          # Vite configuration
+└── README.md               # Project documentation
+```
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-*   Node.js (v16 or higher)
-*   npm or yarn
+Ensure you have **Node.js** (version 16 or higher) installed on your machine.
 
 ### Installation
 
-1.  Clone the repository:
+1.  **Clone the repository**:
     ```bash
     git clone https://github.com/lfoliveira317/arduna.git
     cd arduna
     ```
 
-2.  Install dependencies:
+2.  **Install dependencies**:
     ```bash
     npm install
+    # or
+    yarn install
     ```
 
-3.  Start the development server:
+3.  **Start the development server**:
     ```bash
     npm run dev
     ```
+    The site will be available at `http://localhost:5173`.
 
-4.  Open your browser and visit `http://localhost:5173`
+### Build for Production
+To create an optimized build for deployment:
+```bash
+npm run build
+```
+The output will be in the `dist/` folder.
 
-## 📦 Deployment
+---
 
-This project is optimized for deployment on static hosting platforms like Netlify, Vercel, or GitHub Pages.
+## 🎨 Customization Guide
 
-### Deploy to Netlify (Recommended)
+### Changing Colors
+The color palette is defined as CSS variables in `client/src/index.css`.
+*   **Primary (Dark Slate)**: Edit `--primary` and `--foreground`.
+*   **Secondary (Gold/Champagne)**: Edit `--secondary`.
+*   **Background**: Edit `--background`.
 
+### Updating Content
+*   **Text**: All text content is directly within the component files in `client/src/components/`. For example, to change the hero text, edit `client/src/components/Hero.tsx`.
+*   **Images**: Place new images in `client/public/images/` and update the `src` paths in the components.
+
+### Modifying Fonts
+The project uses Google Fonts (*Lato* and *Playfair Display*). To change them:
+1.  Update the `<link>` tag in `client/index.html`.
+2.  Update the `font-sans` and `font-serif` definitions in `client/src/index.css`.
+
+---
+
+## ☁️ Deployment
+
+### Option 1: Netlify (Recommended)
+Netlify offers the easiest zero-config deployment.
 1.  Log in to [Netlify](https://www.netlify.com/).
-2.  Click **"Add new site"** > **"Import from an existing project"**.
-3.  Connect to GitHub and select the `arduna` repository.
+2.  Select **"Import from Git"**.
+3.  Choose this repository.
 4.  **Build Command**: `npm run build`
 5.  **Publish Directory**: `dist`
-6.  Click **"Deploy"**.
+6.  Click **Deploy**.
 
-### Deploy to GitHub Pages
-
-1.  Update `vite.config.ts` with your repository name if deploying to a subpath:
+### Option 2: GitHub Pages
+1.  In `vite.config.ts`, set the base path:
     ```typescript
     export default defineConfig({
-      base: '/arduna/', // Replace with your repo name
-      // ...
+      base: '/arduna/', // Your repo name
     })
     ```
-2.  Push your code to GitHub.
-3.  Go to Repository Settings > Pages.
-4.  Select "GitHub Actions" as the source.
+2.  Push changes to GitHub.
+3.  Go to **Settings > Pages** in your repo.
+4.  Source: **GitHub Actions**.
 
-For more detailed instructions, please refer to `DEPLOYMENT.md`.
-
-## 🎨 Customization
-
-*   **Colors**: Edit `client/src/index.css` to modify the CSS variables for the color palette.
-*   **Content**: Update the text in the components located in `client/src/components/`.
-*   **Images**: Replace images in `client/public/images/` with your own assets.
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is open source and available under the [MIT License](LICENSE).
